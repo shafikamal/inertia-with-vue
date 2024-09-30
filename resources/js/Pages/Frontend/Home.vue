@@ -1,10 +1,13 @@
 <template>
-    <Navbar/>
-    <div>
-        <h6>This is home page</h6>
-    </div>
+    <Head title="Home Page"/>
+    <Frontend>
+        <div>
+            <h6>This is home page</h6>
+        </div>
+    </Frontend>
 </template>
 
 <script setup>
-import Navbar from '@/Components/Navbar.vue'
+import Frontend from "@/Layouts/Frontend.vue";
+import { Head } from "@inertiajs/vue3";
 </script>

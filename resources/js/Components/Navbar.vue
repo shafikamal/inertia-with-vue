@@ -1,46 +1,58 @@
 <template>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item" v-for="link in links" :key="link.name">
-                <router-link :to="link.path" class="nav-link">{{ link.name }}</router-link>
-            </li>
-        </ul>
+    <nav class="flex justify-between p-4 bg-blue-200 shadow-md">
+        <div class="text-lg font-bold">
+            Dashboard
+        </div>
+        <div>
+            <ul class="flex gap-x-6 mb-0">
+                <li class="nav-item">
+                    <Link class="nav-link" :href="route('home')">Home</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" :href="route('aboutUs')">About</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" :href="route('product.index')">Product</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" :href="route('contactUs')">Contact Us</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" :href="route('login')">Login</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" :href="route('register')">Registration</Link>
+                </li>
+            </ul>
+        </div>
     </nav>
 </template>
 
 <script setup>
-const links = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-];
+import { Link } from "@inertiajs/vue3";
 </script>
 
 <style scoped>
-.navbar {
-    background-color: #333;
-    padding: 10px;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    margin-right: 15px;
-}
-
 .nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
+    color: #2c3e50; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
 .nav-link:hover {
-    background-color: #555;
-    border-radius: 4px;
+    background-color: #6a5acd; /* Darker blue on hover */
+    color: white; /* Change text color on hover */
+}
+
+.nav-item {
+    list-style: none; /* Remove default list style */
 }
 </style>
+
+
+
+
+
+
